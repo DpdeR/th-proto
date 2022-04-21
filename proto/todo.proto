@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package todo;
+
+service TodoService {
+  rpc CreateOrder (CreateTodoRequest) returns (CreateTodoResponse) {}
+}
+
+message CreateTodoRequest {
+  string title = 2;
+  string dueDate = 3;
+}
+
+message CreateTodoResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
+
